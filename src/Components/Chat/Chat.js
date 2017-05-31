@@ -3,13 +3,13 @@
  */
 import React from 'react'
 import './Chat.scss'
-import {connect} from "react-redux";
+import {addNewUser} from "../../Store/ActionCreator";
 
 export class Chat extends React.Component {
     constructor(){
         super();
         this.state ={
-            userName: null
+            userName: 'ILYA'
         }
     }
     addNewName(event){
@@ -18,11 +18,12 @@ export class Chat extends React.Component {
     }
 
     render() {
+        const {dispatch ,users} = this.props;
         return (
             <div>
                 <input type="text" onChange={this.addNewName.bind(this)}/>
-                <button onClick={()=>this.props.addNewUser(this.state.userName)}>ADD NEW USER</button>
-                {this.props.user.map((i,key)=>
+                <button onClick={(userName)=> dispatch(addNewUser(this.state.userName))}>ADD NEW USER</button>
+                {users.map((i,key)=>
                     <p key={key}>Hello {i}</p>
 
                 )}
@@ -32,10 +33,10 @@ export class Chat extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {user: state}
-};
-const mapDispatchToProps = (dispatch) => {
-    return { addNewUser: (name)=>dispatch({type:'ADD_NEW_USER', name})}
-};
-export default connect(mapStateToProps,mapDispatchToProps)(Chat)
+// const mapStateToProps = (state) => {
+//     return {user: state}
+// };
+// const mapDispatchToProps = (dispatch) => {
+//     return { addNewUser: (name)=>dispatch({type:'ADD_NEW_USER', name})}
+// };
+export default Chat
