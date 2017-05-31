@@ -1,3 +1,8 @@
+$DeepPurple100: #D1C4E9;
+$DeepPurple600: #5E35B1;
+$LightBlue100: #B3E5FC;
+$LightBlue600: #039BE5;
+$LightBlue900: #01579B;
 .MainMessage{
   width: 100%;
   height: 100%;
@@ -11,7 +16,7 @@
     flex-direction: column;
     justify-content: center;
     .me{
-      background: #D1C4E9;
+      background: $DeepPurple100;
       display: flex;
       justify-content: center;
       font-size: 14px;
@@ -19,23 +24,25 @@
       border-radius: 9px 58px 64px 0px;
       -moz-border-radius: 9px 58px 64px 0px;
       -webkit-border-radius: 9px 58px 64px 0px;
-      border: 2px solid #5E35B1;
+      border: 2px solid $DeepPurple600;
     }
 
     .you{
-      background: #B3E5FC;
+      background: $LightBlue100;
       font-size: 14px;
       padding: 10px;
       border-radius: 60px 0px 0px 60px;
       -moz-border-radius: 60px 0px 0px 60px;
       -webkit-border-radius: 60px 0px 0px 60px;
-      border: 2px solid #039BE5;
+      border: 2px solid $LightBlue600;
     }
   }
   .allTeam{
+    padding: 10px;
+    color: $LightBlue600;
     display: flex;
     flex: 1;
-    background-color: aquamarine;
     flex-direction: column;
+    border: 1px solid $LightBlue100;
   }
 }

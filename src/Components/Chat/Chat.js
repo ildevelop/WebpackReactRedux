@@ -4,15 +4,22 @@
 import React from 'react'
 import './Chat.scss'
 import {addNewUser} from "../../Store/ActionCreator";
+import {FlatButton, TextField} from "material-ui";
+
 
 export class Chat extends React.Component {
     constructor() {
         super();
         this.state = {
-            userName: 'ILYA'
+            userName: ''
         }
     }
 
+    // componentDidMount(){
+    //     this.setState({
+    //         userName: null
+    //     })
+    // }
     addNewName(event) {
         const title = event.target.value;
         this.setState({userName: title})
@@ -27,7 +34,7 @@ export class Chat extends React.Component {
                     {/*<p  key={key}>Hello {i}</p>*/}
                     {/*)}*/}
                     <div className="clearfix">
-                        <blockquote className="me">Hi</blockquote>
+                        <blockquote className="me">Hi its me</blockquote>
                     </div>
                     <div className="clearfix">
                         <blockquote className="you">Hello</blockquote>
@@ -41,17 +48,17 @@ export class Chat extends React.Component {
                     <div className="clearfix">
                         <blockquote className="me">Just outing</blockquote>
                     </div>
-                    <div className="clearfix">
-                        <blockquote className="you">Hello how do u do ?</blockquote>
-                    </div>
-                    <div className="clearfix">
-                        <blockquote className="me">Yup great !</blockquote>
-                    </div>
+
                 </div>
                 <div className="allTeam">
                     <div className="addUser">
-                        <input type="text" onChange={this.addNewName.bind(this)}/>
-                        <button onClick={(userName) => dispatch(addNewUser(this.state.userName))}>ADD NEW USER</button>
+                        <TextField
+                            hintText="Ilya"
+                            floatingLabelText="User name"
+                            onChange={this.addNewName.bind(this)}
+                        /><br />
+                        <FlatButton label="ADD NEW USER" primary={true} onClick={() => dispatch(addNewUser(this.state.userName))}/>
+
                     </div>
                     <div className="allUsers">
                         {users.map((i, key) =>
