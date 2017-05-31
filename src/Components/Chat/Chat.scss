@@ -1,0 +1,41 @@
+.MainMessage{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  p{
+    padding: 1px 20px;
+  }
+  .allMessage{
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+    justify-content: center;
+    .me{
+      background: #D1C4E9;
+      display: flex;
+      justify-content: center;
+      font-size: 14px;
+      padding: 10px;
+      border-radius: 9px 58px 64px 0px;
+      -moz-border-radius: 9px 58px 64px 0px;
+      -webkit-border-radius: 9px 58px 64px 0px;
+      border: 2px solid #5E35B1;
+    }
+
+    .you{
+      background: #B3E5FC;
+      font-size: 14px;
+      padding: 10px;
+      border-radius: 60px 0px 0px 60px;
+      -moz-border-radius: 60px 0px 0px 60px;
+      -webkit-border-radius: 60px 0px 0px 60px;
+      border: 2px solid #039BE5;
+    }
+  }
+  .allTeam{
+    display: flex;
+    flex: 1;
+    background-color: aquamarine;
+    flex-direction: column;
+  }
+}
