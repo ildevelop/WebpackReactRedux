@@ -1,22 +1,57 @@
 /**
  * Created by Radu on 5/31/2017.
  */
-import {createStore } from 'redux';
-import {ADD_NEW_USER} from "./constant";
+import {combineReducers} from 'redux';
+import {ADD_NEW_USER, ADD_NEW_MESSAGE} from "./constant";
 
 
 
 const initState = {
     usersState:['ilya', 'tanya', 'ivan']
 };
-const reducerFunction = (state = initState, action) => {
+const messageState = [
+    {
+        text : 'Hello',
+        datetime: 1496425795290,
+        author: 'ilya'
+    },
+    {
+        text : 'Hello ilya im ivan',
+        datetime: 1496296167171,
+        author: 'ivan'
+    },
+    {
+        text : 'Hi ivan',
+        datetime: 1498294167171,
+        author: 'tanya'
+    }
+
+];
+const reducerFunctionUser = (state = initState, action) => {
     switch (action.type) {
         case ADD_NEW_USER:
+            console.log('USER',action.payload);
             state = {...state, usersState: state.usersState.concat(action.payload)};
-            console.log('STATE',state);
             break;
     }
     return state
 };
-const store = createStore(reducerFunction);
-export default store
+const reducerFunctionMessage = (state = messageState, action) => {
+    switch (action.type) {
+        case ADD_NEW_MESSAGE:
+            const user = {
+                text : action.text,
+                datetime: action.time,
+                author: action.payload
+            };
+            state =  state.concat(user);
+            break;
+    }
+    return state
+};
+
+
+export default combineReducers({
+    reducerFunctionUser,
+    reducerFunctionMessage
+})

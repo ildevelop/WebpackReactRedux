@@ -3,4 +3,4 @@
  */
 
 export const ADD_NEW_USER= 'ADD_NEW_USER';
-export const SET_EMAIL= 'SET_EMAIL';
+export const ADD_NEW_MESSAGE= 'ADD_NEW_MESSAGE';

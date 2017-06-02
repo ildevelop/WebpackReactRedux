@@ -3,7 +3,7 @@
  */
 import React from 'react'
 import './Chat.scss'
-import {addNewUser} from "../../Store/ActionCreator";
+import {addMessage, addNewUser} from "../../Store/ActionCreator";
 import {FlatButton, TextField} from "material-ui";
 
 
@@ -11,7 +11,8 @@ export class Chat extends React.Component {
     constructor() {
         super();
         this.state = {
-            userName: ''
+            userName: null,
+            newMessage: null,
         }
     }
 
@@ -20,35 +21,38 @@ export class Chat extends React.Component {
     //         userName: null
     //     })
     // }
+    addNewMessage(event){
+        const title = event.target.value;
+        this.setState({newMessage: title})
+    }
     addNewName(event) {
         const title = event.target.value;
         this.setState({userName: title})
     }
 
     render() {
-        const {dispatch, users} = this.props;
+        const {dispatch, users, message} = this.props;
         return (
             <div className="MainMessage">
                 <div className="allMessage">
-                    {/*{users.map((i,key)=>*/}
-                    {/*<p  key={key}>Hello {i}</p>*/}
-                    {/*)}*/}
-                    <div className="clearfix">
-                        <blockquote className="me">Hi its me</blockquote>
+                    {message.map((i, key) => {
+                            var d = new Date(i.datetime);
+                            return (
+                                <div key={key} className="messageYou">
+                                    <span className="messageTime"><i>{`${d.getMonth()}/${d.getDay()} ${d.getHours()}:${d.getMinutes()}`}</i> </span>
+                                    <p className="you"><b>{i.author}</b>: {i.text}</p>
+                                </div>
+                            )
+                        }
+                    )}
+                    <div className="messageMe">
+                        <span className="messageTime"><i>05/25 17:12</i></span>
+                        <p className="you"><b>ilya</b>: Hi its Me</p>
                     </div>
-                    <div className="clearfix">
-                        <blockquote className="you">Hello</blockquote>
+                    <div className="chat_input">
+                        <TextField hintText="Sey Hello !!" onChange={this.addNewMessage.bind(this)}/>
+                        <div className="iconSend" onClick={() => dispatch(addMessage('maxim', this.state.newMessage, Date.now()))}> </div>
                     </div>
-                    <div className="clearfix">
-                        <blockquote className="me">wass up !</blockquote>
-                    </div>
-                    <div className="clearfix">
-                        <blockquote className="you">Film was up u!</blockquote>
-                    </div>
-                    <div className="clearfix">
-                        <blockquote className="me">Just outing</blockquote>
-                    </div>
-
                 </div>
                 <div className="allTeam">
                     <div className="addUser">
@@ -57,7 +61,8 @@ export class Chat extends React.Component {
                             floatingLabelText="User name"
                             onChange={this.addNewName.bind(this)}
                         /><br />
-                        <FlatButton label="ADD NEW USER" primary={true} onClick={() => dispatch(addNewUser(this.state.userName))}/>
+                        <FlatButton label="ADD NEW USER" primary={true}
+                                    onClick={() => dispatch(addNewUser(this.state.userName))}/>
 
                     </div>
                     <div className="allUsers">
@@ -73,10 +78,4 @@ export class Chat extends React.Component {
     }
 }
 
-// const mapStateToProps = (state) => {
-//     return {user: state}
-// };
-// const mapDispatchToProps = (dispatch) => {
-//     return { addNewUser: (name)=>dispatch({type:'ADD_NEW_USER', name})}
-// };
 export default Chat

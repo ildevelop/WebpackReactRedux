@@ -10,7 +10,7 @@ class App extends Component {
             <MuiThemeProvider>
                 <div>
                     <Header/>
-                    <Chat users={this.props.users} dispatch={this.props.dispatch}/>
+                    <Chat users={this.props.users} message={this.props.message} dispatch={this.props.dispatch}/>
                 </div>
 
             </MuiThemeProvider>
@@ -20,8 +20,10 @@ class App extends Component {
 
 
 const mapStateToProps = (state) => {
+    console.log(state.reducerFunctionMessage);
     return {
-        users: state.usersState
+        users: state.reducerFunctionUser.usersState,
+        message: state.reducerFunctionMessage
     }
 };
 export default connect(mapStateToProps)(App)
