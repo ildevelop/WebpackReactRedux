@@ -47,7 +47,7 @@ export class Chat extends React.Component {
                         }
                     )}
                     <div className="messageMe">
-                        <span className="messageTime"><i>05/25 17:12</i></span>
+                        <span className="messageTime"><i>05/27 17:12</i></span>
                         <p className="you"><b>ilya</b>: Hi its Me</p>
                     </div>
                     <div className="chat_input">
