@@ -23,6 +23,7 @@ export class Chat extends React.Component {
     // }
     addNewMessage(event){
         const title = event.target.value;
+        // console.log(event.target.value);
         this.setState({newMessage: title})
     }
     addNewName(event) {

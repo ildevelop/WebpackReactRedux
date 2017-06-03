@@ -2,7 +2,7 @@
  * Created by Radu on 5/31/2017.
  */
 import {combineReducers} from 'redux';
-import {ADD_NEW_USER, ADD_NEW_MESSAGE} from "./constant";
+import {ADD_NEW_USER, ADD_NEW_MESSAGE, CONNECTED_NEW_USER} from "./constant";
 
 
 
@@ -30,7 +30,9 @@ const messageState = [
 const reducerFunctionUser = (state = initState, action) => {
     switch (action.type) {
         case ADD_NEW_USER:
-            console.log('USER',action.payload);
+            state = {...state, usersState: state.usersState.concat(action.payload)};
+            break;
+        case CONNECTED_NEW_USER:
             state = {...state, usersState: state.usersState.concat(action.payload)};
             break;
     }

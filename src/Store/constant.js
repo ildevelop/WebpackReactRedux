@@ -4,3 +4,4 @@
 
 export const ADD_NEW_USER= 'ADD_NEW_USER';
 export const ADD_NEW_MESSAGE= 'ADD_NEW_MESSAGE';
+export const CONNECTED_NEW_USER= 'CONNECTED_NEW_USER';
