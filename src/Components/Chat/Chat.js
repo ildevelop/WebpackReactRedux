@@ -68,7 +68,7 @@ export class Chat extends React.Component {
                     </div>
                     <div className="allUsers">
                         {users.map((i, key) =>
-                            <p key={key}> {i}</p>
+                            <p  className="iconSmile" key={key}>{i}</p>
                         )}
                     </div>
                 </div>

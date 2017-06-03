@@ -64,5 +64,10 @@ $LightBlue900: #01579B;
     flex: 1;
     flex-direction: column;
     border: 1px solid $LightBlue100;
+    .iconSmile{
+      background: url("./../../assets/emoticon-happy.svg") no-repeat;
+
+      padding: 3px 30px;
+    }
   }
 }
