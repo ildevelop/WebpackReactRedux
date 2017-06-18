@@ -30,7 +30,7 @@
     "no-undef": 1,
     "eol-last": 0,
     "no-case-declarations": 0,
-    "indent": [1, "tab", {"SwitchCase": 1}],
+    "indent": [0, "tab", {"SwitchCase": 1}],
     "quotes": [1, "single", {"allowTemplateLiterals": true}],
     "no-unused-vars": 1,
     "comma-dangle": 0,

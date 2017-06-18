@@ -51,7 +51,10 @@ export class Chat extends React.Component {
                         <p className="you"><b>ilya</b>: Hi its Me</p>
                     </div>
                     <div className="chat_input">
-                        <TextField hintText="Sey Hello !!" onChange={this.addNewMessage.bind(this)}/>
+                        <TextField hintText="Sey Hello !!"
+                                   onChange={this.addNewMessage.bind(this)}
+                                   onKeyPress={event => {if(event.key==='Enter'){dispatch(addMessage('maxim', this.state.newMessage, Date.now()))}}}
+                        />
                         <div className="iconSend" onClick={() => dispatch(addMessage('maxim', this.state.newMessage, Date.now()))}> </div>
                     </div>
                 </div>
@@ -61,6 +64,7 @@ export class Chat extends React.Component {
                             hintText="Ilya"
                             floatingLabelText="User name"
                             onChange={this.addNewName.bind(this)}
+                            onKeyPress={event => {if(event.key==='Enter'){dispatch(addNewUser(this.state.userName))}}}
                         /><br />
                         <FlatButton label="ADD NEW USER" primary={true}
                                     onClick={() => dispatch(addNewUser(this.state.userName))}/>
