@@ -4,7 +4,7 @@
 * React 
 * Redux 
 * Hot Module Replacement
-
+* WebRTC
 
 
 #Installation
@@ -17,3 +17,4 @@ Run ` npm run ilya ` for a dev server. Navigate to http://localhost:8080/. The a
 
 WebRTC
 https://jsfiddle.net/shoque/7jwg7etm/
+SimpleWebRTC Doc
