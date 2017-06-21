@@ -1,3 +1,6 @@
+
+import React from 'react'
+import ReactDOM from 'react-dom';
 class WebRtc extends React.Component {
 
     constructor(props) {
@@ -74,3 +77,4 @@ class WebRtc extends React.Component {
         );
     }
 }
+export default WebRtc

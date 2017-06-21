@@ -3,7 +3,6 @@
  */
 import React from 'react'
 import './Chat.scss'
-import Webrtc from './WebRtc'
 import {addMessage, addNewUser} from "../../Store/ActionCreator";
 import {FlatButton, TextField} from "material-ui";
 
@@ -34,11 +33,6 @@ export class Chat extends React.Component {
 
     render() {
         const {dispatch, users, message} = this.props;
-        var object = {
-            roomname : "jsfiddletest",
-            /*provide a valid url for signalmaster otherwise this won't work*/
-            signalmasterUrl: "example.com"
-        }
         return (
             <div className="MainMessage">
                 <div className="allMessage">
@@ -82,11 +76,7 @@ export class Chat extends React.Component {
                         )}
                     </div>
                 </div>
-                <div style={{width:'500',height:'500', background:'#eee'}}>
-                    <div id="container">
-                        <Webrtc obj = {object}/>
-                    </div>
-                </div>
+
 
             </div>
         )
