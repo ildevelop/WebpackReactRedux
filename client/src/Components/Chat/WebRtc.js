@@ -1,4 +1,3 @@
-
 import React from 'react'
 import ReactDOM from 'react-dom';
 class WebRtc extends React.Component {
@@ -13,7 +12,7 @@ class WebRtc extends React.Component {
     componentDidMount() {
         this.webrtc = new SimpleWebRTC({
             localVideoEl: ReactDOM.findDOMNode(this.refs.local),
-            remoteVideosEl: "",
+            remoteVideosEl: "remoteVideos",
             autoRequestMedia: true,
             url: this.props.obj.signalmasterUrl
         });
@@ -65,10 +64,11 @@ class WebRtc extends React.Component {
     }
 
     render() {
-        return ( < div >
+        return (
+            < div >
                 <video className="local"
-                        id="localVideo"
-                        ref="local"/>
+                       id="localVideo"
+                       ref="local"/>
                 < div className="remotes"
                       id="remoteVideos"
                       ref="remotes">

@@ -9,7 +9,7 @@ class App extends Component {
         var object = {
             roomname : "jsfiddletest",
             /*provide a valid url for signalmaster otherwise this won't work*/
-            signalmasterUrl: "127.0.0.1"
+            signalmasterUrl: ""
         };
         console.log("OBJ",object);
         return (
