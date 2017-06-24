@@ -8,8 +8,10 @@
     ws.onopen = () => {
         console.log("WS OPEN");
     };
-    ws.onmessage = (data) => {
-        console.log(data);
+    ws.onmessage = (message) => {
+        console.log("message",message);
+        console.log("data",message.data);
+
     };
     return ws
 })('ws://localhost:3000');
