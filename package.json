@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:client": "cd client && npm run ilya",
     "start:server": "cd server && node app.js",
-    "start": "concurrently \"npm run start:server\" \"npm run start:client\""
+    "start": "npm run start:client"
   },
   "author": "ildevelop",
   "license": "ISC"
