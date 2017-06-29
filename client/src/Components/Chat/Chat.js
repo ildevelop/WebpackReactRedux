@@ -30,7 +30,10 @@ export class Chat extends React.Component {
         const title = event.target.value;
         this.setState({userName: title})
     }
-
+    search(){
+        const BASE_URL= "http://api.fixer.io/latest?base=USD";
+        fetch(BASE_URL,{method:'GET'}).then(r => r.json()).then(j => console.log("json",j))
+    }
     render() {
         const {dispatch, users, message} = this.props;
         return (
@@ -55,7 +58,8 @@ export class Chat extends React.Component {
                                    onChange={this.addNewMessage.bind(this)}
                                    onKeyPress={event => {if(event.key==='Enter'){dispatch(addMessage('maxim', this.state.newMessage, Date.now()))}}}
                         />
-                        <div className="iconSend" onClick={() => dispatch(addMessage('maxim', this.state.newMessage, Date.now()))}> </div>
+                        <div className="iconSend" onClick={() => {this.search();
+                                                dispatch(addMessage('maxim', this.state.newMessage, Date.now()))}}> </div>
                     </div>
                 </div>
                 <div className="allTeam">
