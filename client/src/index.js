@@ -8,9 +8,7 @@ import {createStore, applyMiddleware} from 'redux';
 import reduxThunk from 'redux-thunk'
 import {CONNECTED_NEW_USER} from './Store/constant';
 import {addNewUser} from './Store/ActionCreator';
-import ws from './util/ws'
 
-window.ws = ws;
 const loggerMiddleware = (store) => {
     return (next) => {
         return (action) => {

@@ -3,7 +3,6 @@ import Header from "./Components/Header/Header";
 import {connect} from "react-redux";
 import Chat from "./Components/Chat/Chat";
 import {MuiThemeProvider} from "material-ui";
-import Webrtc from './Components/Chat/WebRtc'
 class App extends Component {
     render() {
         var object = {
@@ -17,9 +16,7 @@ class App extends Component {
                 <div>
                     <Header/>
                     <Chat users={this.props.users} message={this.props.message} dispatch={this.props.dispatch}/>
-                    <Webrtc obj = {object}/>
                 </div>
-
             </MuiThemeProvider>
         );
     }
