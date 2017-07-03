@@ -11,10 +11,14 @@
 ` npm i `
 
 #Development server
-Run ` npm run ilya ` for a dev server. Navigate to http://localhost:8080/. The app will automatically reload if you change any of the source files.
+change in `webpack.config.js` hots to yours IP address. 
+
+Run ` npm run ilya ` for a dev server. Navigate to httpS://your-IP:8080/. choose room 
+ The app will automatically reload if you change any of the source files.
 
 
 
 WebRTC
-https://jsfiddle.net/shoque/7jwg7etm/
+https://rtcmulticonnection.herokuapp.com/demos/
+deprecated https://jsfiddle.net/shoque/7jwg7etm/
 SimpleWebRTC Doc
